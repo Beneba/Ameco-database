@@ -25,13 +25,16 @@
         <div class="form-container sign-in-container">
             <form action="{{=URL('store')}}" method="post">
                 <div class="title">
-                    <h1>Kindly fill the form below</h1>
+                    <h1> Kindly fill the form </h1>
                 </div>
                 <div class="input">
                     <input type="text" name="surname" placeholder="Surname" required/>
                 </div>
                 <div class="input">
                     <input type="text" name="othername" placeholder="Other name" required/>
+                </div>
+                <div class="input">
+                    <input type="date" name="dateofbirth" placeholder="Date of Birth" required/>
                 </div>
                 <div class="input">
                     <input type="text" name="gender" placeholder="Gender" required/>
@@ -46,11 +49,9 @@
                     <input type="email" name="email" placeholder="Email" required/>
                 </div>
                 <div class="input">
-                    <input type="number" name="contact" placeholder="Contact Number" required/>
+                    <input type="number" name="number" placeholder="Contact Number" required/>
                 </div>
-                <div class="input">
-                    <input type="password" name="password" placeholder="Password" required />
-                </div>
+                
                 <div class="input">
                     <input type="text" name="staffid" placeholder="Staff ID" required/>
                 </div>
@@ -58,6 +59,7 @@
                     <input type="text" name="rank" placeholder="Rank" required/>
                 </div>
                 <div class="input">
+                    <label >Upload a photo</label>
                     <input type="file" id="file-with-current" placeholder="Upload photo" class="input-default-js">                  
                     
                 </div>
