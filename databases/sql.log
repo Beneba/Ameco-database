@@ -632,3 +632,168 @@ success!
 success!
 success!
 success!
+timestamp: 2019-04-25T07:40:32.631000
+ALTER TABLE "users" ADD "db_department" CHAR(512);
+timestamp: 2019-04-25T07:40:33.134000
+ALTER TABLE "users" ADD "db_othername" CHAR(512);
+timestamp: 2019-04-25T07:40:33.328000
+ALTER TABLE "users" ADD "db_qualification" CHAR(512);
+timestamp: 2019-04-25T07:40:33.662000
+ALTER TABLE "users" ADD "db_surname" CHAR(512);
+timestamp: 2019-04-25T07:40:33.862000
+ALTER TABLE "users" ADD "db_gender" CHAR(512);
+timestamp: 2019-04-25T07:40:34.036000
+ALTER TABLE "users" ADD "db_rank" CHAR(512);
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2019-05-01T08:48:07.569000
+ALTER TABLE "users" ADD "db_staffid" CHAR(512);
+timestamp: 2019-05-01T08:48:07.830000
+ALTER TABLE "users" ADD "db_numeber" CHAR(512);
+success!
+timestamp: 2019-05-06T07:27:47.866000
+CREATE TABLE "auth_user"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "first_name" CHAR(128),
+    "last_name" CHAR(128),
+    "email" CHAR(512),
+    "password" CHAR(512),
+    "registration_key" CHAR(512),
+    "reset_password_key" CHAR(512),
+    "registration_id" CHAR(512)
+);
+success!
+timestamp: 2019-05-06T07:27:48.002000
+CREATE TABLE "auth_group"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "role" CHAR(512),
+    "description" TEXT
+);
+success!
+timestamp: 2019-05-06T07:27:48.128000
+CREATE TABLE "auth_membership"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "group_id" INTEGER REFERENCES "auth_group" ("id") ON DELETE CASCADE  
+);
+success!
+timestamp: 2019-05-06T07:27:48.227000
+CREATE TABLE "auth_permission"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "group_id" INTEGER REFERENCES "auth_group" ("id") ON DELETE CASCADE  ,
+    "name" CHAR(512),
+    "table_name" CHAR(512),
+    "record_id" INTEGER
+);
+success!
+timestamp: 2019-05-06T07:27:48.341000
+CREATE TABLE "auth_event"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "time_stamp" TIMESTAMP,
+    "client_ip" CHAR(512),
+    "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "origin" CHAR(512),
+    "description" TEXT
+);
+success!
+timestamp: 2019-05-06T07:27:48.454000
+CREATE TABLE "auth_cas"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "user_id" INTEGER REFERENCES "auth_user" ("id") ON DELETE CASCADE  ,
+    "created_on" TIMESTAMP,
+    "service" CHAR(512),
+    "ticket" CHAR(512),
+    "renew" CHAR(1)
+);
+success!
+timestamp: 2019-05-06T07:27:48.567000
+CREATE TABLE "lecturers"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "surname" CHAR(512),
+    "othername" CHAR(512),
+    "dateofbirth" CHAR(512),
+    "gender" CHAR(512),
+    "department" CHAR(512),
+    "qualification" CHAR(512),
+    "email" CHAR(512),
+    "number" CHAR(512),
+    "staffid" CHAR(512),
+    "rank" CHAR(512),
+    "image" CHAR(512)
+);
+success!
+timestamp: 2019-05-06T07:27:48.692000
+CREATE TABLE "tutors"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "surname" CHAR(512),
+    "othername" CHAR(512),
+    "email" CHAR(512),
+    "dateofbirth" CHAR(512),
+    "gender" CHAR(512),
+    "department" CHAR(512),
+    "qualification" CHAR(512),
+    "number" CHAR(512),
+    "staffid" CHAR(512),
+    "rank" CHAR(512),
+    "image" CHAR(512)
+);
+success!
+timestamp: 2019-05-06T07:27:48.814000
+CREATE TABLE "credentials"(
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
+    "email" CHAR(512),
+    "password" CHAR(512)
+);
+success!

@@ -1,60 +1,95 @@
+# -*- coding: utf-8 -*-
+# -------------------------------------------------------------------------
+# This is a sample controller
+# this file is released under public domain and you can use without limitations
+# -------------------------------------------------------------------------
+
+# ---- example index page ----
+def index():
+    response.flash = T("Hello World")
+    return dict(message=T('Welcome to web2py!'))
+
+# ---- API (example) -----
+@auth.requires_login()
+def api_get_user_email():
+    if not request.env.request_method == 'GET': raise HTTP(403)
+    return response.json({'status':'success', 'email':auth.user.email})
+
+# ---- Smart Grid (example) -----
+@auth.requires_membership('admin') # can only be accessed by members of admin groupd
+def grid():
+    response.view = 'generic.html' # use a generic view
+    tablename = request.args(0)
+    if not tablename in db.tables: raise HTTP(403)
+    grid = SQLFORM.smartgrid(db[tablename], args=[tablename], deletable=False, editable=False)
+    return dict(grid=grid)
+
+# ---- Embedded wiki (example) ----
+def wiki():
+    auth.wikimenu() # add the wiki to the menu
+    return auth.wiki() 
+
+# ---- Action for login/register/etc (required for auth) -----
+def user():
+    """
+    exposes:
+    http://..../[app]/default/user/login
+    http://..../[app]/default/user/logout
+    http://..../[app]/default/user/register
+    http://..../[app]/default/user/profile
+    http://..../[app]/default/user/retrieve_password
+    http://..../[app]/default/user/change_password
+    http://..../[app]/default/user/bulk_register
+    use @auth.requires_login()
+        @auth.requires_membership('group name')
+        @auth.requires_permission('read','table name',record_id)
+    to decorate functions that need access control
+    also notice there is http://..../[app]/appadmin/manage/auth to allow administrator to manage users
+    """
+    return dict(form=auth())
+
+# ---- action to server uploaded static content (required) ---
+@cache.action()
+def download():
+    """
+    allows downloading of uploaded files
+    http://..../[app]/default/download/[filename]
+    """
+    return response.download(request, db)
+
+
+
+
+
+
+
+
+
 def signup():
+    form = SQLFORM(db.credentials)
+    if form.process(session=None, formname='credentials').accepted:
+        response.flash = 'signup  successfully'
+        redirect(URL('lecturers.html'))
+    else:           
+        response.flash = 'An error occurred'
     return dict()
-
-def store():
-    submitted_name = request.vars.name
-    submitted_email = request.vars.email
-    submitted_password =request.vars.password
-
-    results = db.users.insert(
-        db_name =submitted_name,
-        db_email =submitted_email,
-        db_password = submitted_password
-    )
-
-    if results:
-        return "User Saved Successfully"
-    else:
-        return "An Error Occured"
 
 
 def lecturers():
+    form = SQLFORM(db.lecturers)
+    if form.process(session=None, formname='lecturers').accepted:
+        response.flash = 'Lecturer added successfully'
+        redirect(URL(''))
+    else:
+        response.flash ="An error occured"
+    return dict()    
+
+def tutors():
     return dict()
 
-
-def store():
-    submitted_surname = request.vars.surname
-    submitted_othername = request.vars.othername
-    submitted_dateofbirth = request.vars.dateofbirth
-    submitted_gender = request.vars.gender
-    submitted_department = request.vars.department 
-    submitted_qualification = request.vars.qualification
-    submitted_email = request.vars.email
-    submitted_number =request.vars.number
-    submitted_staffid = request.vars.staffid
-    submitted_rank = request.vars.rank
-
-    results = db.users.insert(
-        db_surname =submitted_surname,
-        db_othername =submitted_othername,
-        db_dateofbirth =submitted_dateofbirth,
-        db_gender =submitted_gender,
-        db_department =submitted_department,
-        db_qualification =submitted_qualification,
-        db_email =submitted_email,
-        db_number =submitted_number,
-        db_staffid =submitted_staffid,
-        db_rank =submitted_rank
-    )
-
-    if results:
-        return "User Saved Successfully"
-    else:
-        return "An Error Occured"
-
 def details():
-   users = db().select(db.users.ALL)
-   return dict(users=users)
+   lecturers = db().select(db.lecturers.ALL)
+   return dict(lecturers=lecturers)
    
 
 def authenticate():

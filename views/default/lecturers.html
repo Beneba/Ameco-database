@@ -23,7 +23,7 @@
 
     <div class="fluid-container" id="container">
         <div class="form-container sign-in-container">
-            <form action="{{=URL('store')}}" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
                 <div class="title">
                     <h1> Kindly fill the form </h1>
                 </div>
@@ -60,9 +60,11 @@
                 </div>
                 <div class="input">
                     <label >Upload a photo</label>
-                    <input type="file" id="file-with-current" placeholder="Upload photo" class="input-default-js">                  
-                    
+                    <input type="file" id="file-with-current" placeholder="Upload photo" class="input-default-js" name="image">             
                 </div>
+                <input type="hidden" name="_formname" value="lecturers">
+
+
                 <button type="submit">Submit</button>
                 
             </form>
@@ -71,7 +73,7 @@
     
     <footer>
         <p>
-            Developed <i class="fa fa-heart"></i> by
+            Developed by <i class="fa fa-heart"></i> 
             <a target="_blank" href="https://beneba.github.io/MyPortfolioWebsite-/about.html">Afetsi Bless B.</a>
             
         </p>

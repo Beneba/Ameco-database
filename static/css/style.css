@@ -61,11 +61,18 @@
     margin-right: -292px;
     margin-top: 74px;
  }
- /* .image img{
-     width: 130px;
-     height:150px;
- } */
+ .user-1{
+	margin-left: 200px;
+	margin-top: -150px;
  }
+ .user-2{
+	margin-left: 400px;
+	margin-top: -105px;
+ }
+  .image img{
+     width: 130px;
+     height:140px;
+ } 
 .gender{
     margin: -40px 85px 15px 130px;
 }
