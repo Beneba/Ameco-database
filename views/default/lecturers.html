@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>E.P.College of Education, Amedzofe</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" type="text/css" href= "{{=URL('static','css/style.css') }}">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <!-- <link href="css/style.css" rel="stylesheet"> -->
+</head>
+
+<body>
+
+    <div class="fluid-container" id="container">
+        <div class="form-container sign-in-container">
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="title">
+                    <h1> Kindly fill the form </h1>
+                </div>
+                <div class="input">
+                    <input type="text" name="surname" placeholder="Surname" required/>
+                </div>
+                <div class="input">
+                    <input type="text" name="othername" placeholder="Other name" required/>
+                </div>
+                <div class="input">
+                    <input type="date" name="dateofbirth" placeholder="Date of Birth" required/>
+                </div>
+                <div class="input">
+                    <input type="text" name="gender" placeholder="Gender" required/>
+                </div>
+                <div class="input">
+                    <input type="text" name="department" placeholder="Depatment" required/>
+                </div>
+                <div class="input">
+                    <input type="text" name="qualification" placeholder="  Qualification" required/>
+                </div>
+                <div class="input">
+                    <input type="email" name="email" placeholder="Email" required/>
+                </div>
+                <div class="input">
+                    <input type="number" name="number" placeholder="Contact Number" required/>
+                </div>
+                
+                <div class="input">
+                    <input type="text" name="staffid" placeholder="Staff ID" required/>
+                </div>
+                <div class="input">
+                    <input type="text" name="rank" placeholder="Rank" required/>
+                </div>
+                <div class="input">
+                    <label >Upload a photo</label>
+                    <input type="file" id="file-with-current" placeholder="Upload photo" class="input-default-js" name="image">             
+                </div>
+                <input type="hidden" name="_formname" value="lecturers">
+
+
+                <button type="submit">Submit</button>
+                
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        <p>
+            Developed <i class="fa fa-heart"></i> by
+            <a target="_blank" href="https://beneba.github.io/MyPortfolioWebsite-/about.html">Afetsi Bless B.</a>
+            
+        </p>
+    </footer>
+    
+
+  <!-- SCRIPTS -->
+
+
+    <script>
+            const signUpButton = document.getElementById('signUp');
+            const signInButton = document.getElementById('signIn');
+            const container = document.getElementById('container');
+
+            signUpButton.addEventListener('click', () => {
+                container.classList.add("right-panel-active");
+            });
+
+            signInButton.addEventListener('click', () => {
+                container.classList.remove("right-panel-active");
+            });
+    </script>
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+</body>
+
+</html>

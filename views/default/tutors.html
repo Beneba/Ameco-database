@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>E.P.College of Education, Amedzofe</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href= "{{=URL('static','css/style.css') }}">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+      <div class="">
+            <div class="tutors-main">
+                <div class="col-md-8 col-xs-6 center">
+                  
+                    <section class="form-light">
+
+                    <!--Form without header-->
+                   
+                    
+                        <div class="card-body mx-4">
+                    
+                            <!--Header-->
+                            <div class="text-center">
+                                <h3 class="pink-text mb-5"><strong>Kindly fill the form below and submit</strong></h3>
+                            </div>
+                    
+                            <!--Body-->
+                            <form action="" enctype="multipart/form-data" method="post">
+                                <div class="md-form">
+                                    <input type="text" id="Form-surname" class="form-control" name="surname">
+                                    <label for="Form-surname">Surname</label>
+                                </div>
+                                <div class="md-form">
+                                        <input type="text" id="Form-othername" class="form-control" name="othername">
+                                        <label for="Form-othername">Other Names</label>
+                                    </div>
+
+                                    <div class="md-form">
+                                            <input type="text" id="Form-email2" class="form-control"name="email">
+                                            <label for="Form-email2">Your email</label>
+                                        </div>
+
+                                    <div class="md-form">
+                                    
+                                        <!-- <input type="date" id="inputMDEx" class="form-control">
+                                        <label for="inputMDEx">Choose your date</label> -->
+                                        <div class="md-form">
+                                            <input placeholder="Selected date" type="text" id="date-picker-example" class="form-control datepicker" name="dateofbirth">
+                                            <label for="date-picker-example">Date of Birth</label>
+                                        </div>
+
+                                    </div>
+                                        
+                                    <label for="Form-gender">Gender</label>
+                                    <div class="gender">
+                                        <div class="gender-male">
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="materialIndeterminate2" name="gender" checked>
+                                                <label class="form-check-label" for="materialIndeterminate2">Males</label>
+                                            </div>
+                                        </div>
+                                        <div class="gender-female">
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="materialIndeterminate2" name="gender" checked>
+                                                <label class="form-check-label" for="materialIndeterminate2">Female</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="md-form">
+                                        <input type="text" id="Form-department" name="department" class="form-control">
+                                        <label for="Form-department">Department</label>
+                                    </div>
+                                    <div class="md-form">
+                                        <input type="text" id="Form-qualification" name="qualification" class="form-control">
+                                        <label for="Form-qualification">Qualifications</label>
+                                    </div>
+                                    <div class="md-form">
+                                        <input type="text" id="Form-contact" name="number" class="form-control">
+                                        <label for="Form-contact">Contact Number</label>
+                                    </div>
+                                    <div class="md-form">
+                                        <input type="text" id="Form-staff" name="staffid" class="form-control">
+                                        <label for="Form-staff">Staff ID</label>
+                                    </div>
+                                    <div class="md-form">
+                                        <input type="text" id="Form-rank" name="rank" class="form-control">
+                                        <label for="Form-rank">Rank</label>
+                                    </div>
+                                    <div class="input-default-wrapper mt-3">
+                                        <input type="file" name="file" id="file-with-current" class="input-default-js">
+                                    
+                                        <label class="label-for-default-js rounded-right mb-3" for="file-with-current"><span class="span-choose-file">Upload
+                                            photo</span>
+                                        </label>
+                                    </div>
+                                    <input type="hidden" name="_formname" value="tutors">
+
+                              
+                                
+                            </div>
+                          
+                    
+                            <!--Grid row-->
+                            <div class="row d-flex align-items-center mb-4">
+                    
+                                <!--Grid column-->
+                                <div class="col-md-3 col-md-6 text-center">
+                                    <button type="submit" class="btn btn-pink btn-block btn-rounded z-depth-1">Submit</button>
+                                </div>
+                                <!--Grid column-->
+                    
+                                <!--Grid column-->
+                                <div class="col-md-6">
+                                    <p class="font-small grey-text d-flex justify-content-end"> <a href="#" class="blue-text ml-1"> Edit</a></p>
+                                </div>
+                                <!--Grid column-->
+                    
+                            </div>
+                            <!--Grid row-->
+                        </div>
+                    </div>
+                    <!--/Form without header-->
+                    
+                    </section>
+           
+                </div>
+            </div>
+        <!-- <div class="col-md-5">
+
+        </div> -->
+      </div>
+    </form>
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+      
+      <script>
+      // Data Picker Initialization
+        $('.datepicker').pickadate();
+        date-picker.init(datapickr,{})
+
+        const data_picker = document.querySelector('.datapicker');
+          datapicker.init(data_picker, {});
+      </script>
+      
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+</body>
+
+</html>

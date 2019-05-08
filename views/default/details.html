@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>E.P.College of Education, Amedzofe</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href= "{{=URL('static','css/style.css') }}">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+      <div class="container">
+            <div class="detail-main">
+                <div class="col-md-8 col-xs-6 center">
+                  
+                    <section class="form-light">
+
+                    <!--Form without header-->
+                    <div class="card">
+                {{if lecturers:}}
+                    {{for lecturer in lecturers:}}
+                        <div class="card-body mx-4">
+                            <div class="text-center">
+                                <h3 class="pink-text mb-5">
+                                    <strong>STAFFS BIO DATA</strong></h3>
+                                </div>
+                            <div class="row">
+                                <div class="col-md 2">
+                                    <div class="image">
+                                        <img src="{{=URL('download', args=lecturer.image)}}" width="200px">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="user-1"> 
+                                       <br>
+                                        <ul>
+                                            <li>{{=lecturer.surname}}</li>
+                                            <li>{{=lecturer.email}}</li>
+                                            <li>{{=lecturer.gender}}</li>
+                                            <li>{{=lecturer.qualification}}</li>
+                                            <li>{{=lecturer.staffid}}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="user-2">
+                                        <ul>
+                                            <li>{{=lecturer.othername}}</li>
+                                            <li>{{=lecturer.dateofbirth}}</li>
+                                            <li>{{=lecturer.department}}</li>
+                                            <li>{{=lecturer.number}}</li>
+                                            <li>{{=lecturer.rank}}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                         
+                        </div>
+                    </div>
+                    {{pass}}
+                {{else:}}
+                    <h2>No Users Found</h2>
+                {{pass}}
+                    <!--/Form without header-->
+                    <hr>
+                    </section>
+           
+                </div>
+            </div>
+        <!-- <div class="col-md-5">
+
+        </div> -->
+      </div>
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+</body>
+
+</html>
