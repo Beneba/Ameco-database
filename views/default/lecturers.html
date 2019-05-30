@@ -46,10 +46,14 @@
                 <div class="input">
                   <select  style="width:750px;height: 30px" class="form-control generic-widget" id="lecturers_department" name="department">
 
-                    <option value="">choose one</option>
-                    <option value="R3.2">R3.2</option>
-                    <option value="R3.3">R3.3</option>
-                    <option value="R3.4">R3.4</option>
+                    <option value="">Select Department</option>
+                    <option value="Education">Education</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Science/Physical Eduacation">Science/Physical Eduacation</option>
+                    <option value="Language">Language</option>
+                    <option value="Social Science">Social Science</option>
+                    <option value="Creative Art/Vocational Skills">Creative Art/Vocational Skills</option>
+
 
                     <script>
                       jQuery('select[name=department]').on('change', function() {
@@ -73,8 +77,23 @@
                     <input type="text" name="staffid" placeholder="Staff ID" required/>
                 </div>
                 <div class="input">
-                    <input type="text" name="rank" placeholder="Rank" required/>
-                </div>
+                  <select  style="width:750px;height: 30px" class="form-control generic-widget" id="lectures_rank" name="rank">
+
+                    <option value="">Select rank</option>
+                    <option value="Assistant Tutor">Assistant Tutor</option>
+                    <option value="Tutor">Tutor</option>
+                    <option value="Senior Tutor">Senior Tutor</option>
+                    <option value="Principal Tutor">Principal Tutor</option>
+                    
+
+                    <script>
+                      jQuery('select[name=rank]').on('change', function() {
+                         [do something here]
+                       });
+                     </script>
+                  
+                  </select> 
+                </div>    
                 <div class="input">
                     <label >Upload a photo</label>
                     <input type="file" id="file-with-current" placeholder="Upload photo" class="input-default-js" name="image">             

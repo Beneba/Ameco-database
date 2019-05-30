@@ -132,6 +132,8 @@
 'Rows in Table': 'Rows in Table',
 'Rows selected': 'Rows selected',
 'Save model as...': 'Save model as...',
+'Select department': 'Select department',
+'Select rank': 'Select rank',
 'Services': 'Services',
 'Sign Up': 'Sign Up',
 'Sign up': 'Sign up',

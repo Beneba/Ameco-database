@@ -161,12 +161,12 @@ db.define_table("lecturers",
             Field('othername'),
             Field('dateofbirth'),
             Field('gender'),
-            Field('department', requires=IS_IN_SET(['R3.2', 'R3.3', 'R3.4'],zero=T('choose one'),error_message='must be R3.2 or R3.3  or R3.4 '),label = T('SPR')),
+            Field('department', requires=IS_IN_SET(['Education', 'Mathematics', 'Science/Physical Education', 'Language', 'Social Science', 'Creative Art/Vocational Skills'],zero=T('Select department'),error_message='must be Education or Mathematics or Science/Physical Education orLanguage or Social Science or Creative Arts/Vocational Skills  '),label = T('SPR')),
             Field('qualification'),
             Field('email'), 
             Field('number'), 
             Field('staffid'),
-            Field('rank'),
+            Field('rank', requires=IS_IN_SET(['Assistant Tutor', 'Tutor', 'Senior Tutor', 'Principal Tutor'],zero=T('Select rank'),error_message='must be Assistant Tutor or Tutor or Senior Tutor '),label = T('SPR')),
             Field('image', 'upload'))
 
 
