@@ -39,14 +39,31 @@
                 <div class="input">
                     <input type="text" name="gender" placeholder="Gender" required/>
                 </div>
+                <!--
                 <div class="input">
-                    <input type="text" name="department" placeholder="Depatment" required/>
-                </div>
+                    <input type="text" name="department" placeholder="Department" required/>
+                </div>-->
+                <div class="input">
+                  <select  style="width:750px;height: 30px" class="form-control generic-widget" id="lecturers_department" name="department">
+
+                    <option value="">choose one</option>
+                    <option value="R3.2">R3.2</option>
+                    <option value="R3.3">R3.3</option>
+                    <option value="R3.4">R3.4</option>
+
+                    <script>
+                      jQuery('select[name=department]').on('change', function() {
+                         [do something here]
+                       });
+                     </script>
+                  
+                  </select> 
+                </div>    
                 <div class="input">
                     <input type="text" name="qualification" placeholder="  Qualification" required/>
                 </div>
                 <div class="input">
-                    <input type="email" name="email" placeholder="Email" required/>
+                    <input type="email" name="email" placeholder="Email"  required/>
                 </div>
                 <div class="input">
                     <input type="number" name="number" placeholder="Contact Number" required/>

@@ -79,10 +79,12 @@ def lecturers():
     form = SQLFORM(db.lecturers)
     if form.process(session=None, formname='lecturers').accepted:
         response.flash = 'Lecturer added successfully'
-        redirect(URL(''))
+        redirect(URL('details' ))
     else:
         response.flash ="An error occured"
     return dict()    
+
+   
 
 def tutors():
     return dict()
@@ -90,14 +92,9 @@ def tutors():
 def details():
    lecturers = db().select(db.lecturers.ALL)
    return dict(lecturers=lecturers)
+
+
    
 
-def authenticate():
-    submitted_email = request.vars.email
-    submitted_password = request.vars.password
 
-    if db(db.user.db_email==submitted_email
-            and db.users.db_password==submitted_password).count()>0:
-        return "User Logged in Successfully"
-    else: 
-        return "User Not found. Please Sign Up"
+   

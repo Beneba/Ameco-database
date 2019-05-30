@@ -161,13 +161,16 @@ db.define_table("lecturers",
             Field('othername'),
             Field('dateofbirth'),
             Field('gender'),
-            Field('department'),
+            Field('department', requires=IS_IN_SET(['R3.2', 'R3.3', 'R3.4'],zero=T('choose one'),error_message='must be R3.2 or R3.3  or R3.4 '),label = T('SPR')),
             Field('qualification'),
             Field('email'), 
             Field('number'), 
             Field('staffid'),
             Field('rank'),
             Field('image', 'upload'))
+
+
+
 
 db.define_table("tutors",
             Field('surname'),
@@ -185,3 +188,13 @@ db.define_table("tutors",
 db.define_table("credentials",
             Field('email'),
             Field('password'))
+
+
+
+
+db.define_table('pehi',
+    Field('name', requires=IS_NOT_EMPTY()),
+    Field('married', 'boolean'),
+    Field('gender', requires=IS_IN_SET(['Male', 'Female', 'Other'])),
+    Field('profile', 'text'),
+    Field('image', 'upload'))
